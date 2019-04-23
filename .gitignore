@@ -2,6 +2,10 @@
 node_modules
 /dist
 
+# videos are too large to use source control
+/public/config/videos
+/public/config/additional-resources
+
 # local env files
 .env.local
 .env.*.local

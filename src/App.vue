@@ -1,28 +1,57 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="top-menu">
+      <h1 id="title">SFZC Oryoki Instructions</h1>
+    </div>
+    <Menu
+      @changePage="changePage"
+    />
+    <div class="container">
+      <PlayAll v-if="currentPage==='playAll'"/>
+      <TOC v-if="currentPage==='toc'"/>
+      <Resources v-if="currentPage==='resources'"/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Menu from './components/Menu.vue'
+import TOC from './components/TOC.vue'
+import Resources from './components/Resources.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Menu, TOC, Resources
+  },
+  data () {
+    return {
+      currentPage: "toc"
+    }
+  },
+  methods: {
+    changePage(pageName) {
+      this.currentPage = pageName;
+    }
   }
 }
 </script>
 
 <style>
+#logo {
+  width: 80px;
+  padding-left: 30px;
+}
+#title {
+  display: inline-block;
+  padding-left: 40px;
+  vertical-align: top;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 </style>
