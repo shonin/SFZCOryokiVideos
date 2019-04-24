@@ -73,21 +73,21 @@ module.exports = [
   {
     src: "a1.mp4",
     title: "Appendix 1: Setting out the priest bowls",
-    autoplay: false
+    autoplay: true
   },
   {
     src: "a2.mp4",
     title: "Appendix 2: Wrapping up priest bowls",
-    autoplay: false
+    autoplay: true
   },
   {
     src: "a3.mp4",
     title: "Appendix 3: Evening meal priest bowls",
-    autoplay: false
+    autoplay: true
   },
   {
     src: "a4.mp4",
     title: "Appendix 4: Priest bowls lunch spirit offering",
-    autoplay: false
+    autoplay: true
   }
 ];
