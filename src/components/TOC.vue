@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Table of Contents</h2>
-    <ul>
+    <ul class="toc">
       <template v-for="(item, i) in toc">
         <li
           class="pointer"
@@ -72,5 +72,8 @@ video {
 }
 .pointer {
   cursor: pointer;
+}
+ul.toc {
+  margin-left: -20px;
 }
 </style>

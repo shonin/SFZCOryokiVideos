@@ -2,10 +2,25 @@
   <div class="menu">
     <ul>
       <li>
-        <a href="#" @click.prevent="$emit('changePage', 'toc')">Table of Contents</a>
+        <a
+          href="#"
+          @click.prevent="$emit('changePage', 'toc')"
+          :class="{ 'active' : currentPage == 'toc'}"
+        >Table of Contents</a>
       </li>
       <li>
-        <a href="#" @click.prevent="$emit('changePage', 'resources')">Additional Resources</a>
+        <a
+          href="#"
+          @click.prevent="$emit('changePage', 'resources')"
+          :class="{ 'active' : currentPage == 'resources'}"
+        >Additional Resources</a>
+      </li>
+      <li>
+        <a
+          href="#"
+          @click.prevent="$emit('changePage', 'credits')"
+          :class="{ 'active' : currentPage == 'credits'}"
+        >Credits</a>
       </li>
       <li>
         <a href="https://giving.sfzc.org/give/170840/#!/donation/checkout" target="_blank">Donate</a>
@@ -19,7 +34,10 @@
 
 <script>
 export default {
-  name: 'Menu'
+  name: 'Menu',
+  props: {
+    currentPage: String
+  }
 }
 </script>
 
@@ -31,5 +49,9 @@ export default {
 }
 .menu ul li a {
   color: #2c3e50;
+}
+
+li a.active {
+  text-decoration: underline;
 }
 </style>

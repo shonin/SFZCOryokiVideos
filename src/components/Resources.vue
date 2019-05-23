@@ -5,7 +5,7 @@
 
       <tr>
         <td><strong>Resource Name</strong></td>
-        <td><strong>File Type</strong></td>
+        <!-- <td><strong>File Type</strong></td> -->
       </tr>
       <template v-for="(item, i) in resources">
         <tr :key="i">
@@ -16,9 +16,9 @@
             :key="i">
             {{ item.title }}
           </td>
-          <td>
+          <!-- <td>
             {{ item.type }}
-          </td>
+          </td> -->
           <td v-if="item.type === 'PDF'">
             <a v-bind:href="getSrc(i)" target="_blank">Open PDF in new tab</a>
           </td>
@@ -26,6 +26,7 @@
       </template>
 
     </table>
+    <div class="credit"><p><i>Sewing Instructions provided by Jean Selkirk of Berkeley Zen Center</i></p></div>
     <ResourceModal
       :currentVideo="currentVideo"
       :resources="resources"
@@ -90,5 +91,8 @@ video {
 }
 td {
   padding-right: 50px;
+}
+.credit {
+  padding-top: 40px;
 }
 </style>

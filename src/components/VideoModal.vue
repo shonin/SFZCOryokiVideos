@@ -66,6 +66,9 @@ export default {
 </script>
 
 <style>
+figure {
+  background-color: blue;
+}
 .mr20 {
   margin-right: 20px;
 }
