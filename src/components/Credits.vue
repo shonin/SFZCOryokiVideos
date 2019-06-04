@@ -2,7 +2,7 @@
   <div class="credits">
     <h1>Credits</h1>
     <ul>
-      <li>Linda Ruth-Cutts - Content</li>
+      <li>Linda Ruth-Cutts - Content & Presentation</li>
       <li>John Anklow - Videographer</li>
       <li>Kodo Conlin - Editor, Project Manager</li>
       <li>Bryson McNally - Editor</li>
