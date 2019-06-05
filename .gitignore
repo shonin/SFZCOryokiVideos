@@ -5,6 +5,7 @@ node_modules
 # videos are too large to use source control
 /public/config/videos
 /public/config/additional-resources
+/videos2
 
 # local env files
 .env.local

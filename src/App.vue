@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <div class="top-menu">
-      <h1 id="title">SFZC Oryoki Instructions</h1>
+    <div v-if="showApp()" id="private">
+      <div class="top-menu">
+        <h1 id="title">SFZC Oryoki Instructions</h1>
+      </div>
+      <Menu
+        @changePage="changePage"
+        :currentPage="currentPage"
+      />
+      <iframe src="https://cdn.jwplayer.com/players/vZv5VbvZ-jwrvqMME.html"></iframe>
+      <div class="container">
+        <PlayAll v-if="currentPage==='playAll'"/>
+        <TOC v-if="currentPage==='toc'"/>
+        <Resources v-if="currentPage==='resources'"/>
+        <Credits v-if="currentPage==='credits'"/>
+      </div>
+      <img class="enso" v-bind:src="getImgSrc('enso.gif')">
     </div>
-    <Menu
-      @changePage="changePage"
-      :currentPage="currentPage"
-    />
-    <div class="container">
-      <PlayAll v-if="currentPage==='playAll'"/>
-      <TOC v-if="currentPage==='toc'"/>
-      <Resources v-if="currentPage==='resources'"/>
-      <Credits v-if="currentPage==='credits'"/>
+    <div v-else id="public">
+      <p>Please enter access phrase</p>
+      <input placeholder="access phrase" v-model="password" id="password">
     </div>
-    <img class="enso" v-bind:src="getImgSrc('enso.gif')">
   </div>
 </template>
 
@@ -22,6 +29,8 @@ import Menu from './components/Menu.vue'
 import TOC from './components/TOC.vue'
 import Resources from './components/Resources.vue'
 import Credits from './components/Credits.vue'
+import settings from './settings.js'
+import cookieHelpers from './cookieHelpers.js'
 
 export default {
   name: 'app',
@@ -32,6 +41,7 @@ export default {
     return {
       currentPage: "toc",
       publicPath: process.env.BASE_URL,
+      password: ""
     }
   },
   methods: {
@@ -41,6 +51,14 @@ export default {
     getImgSrc(img) {
       return this.publicPath + "config/img/" + img;
     },
+    showApp() {
+      if(!settings.passwordProtectSite) { return true; }
+      if(this.password === settings.password || cookieHelpers.checkCookie()) {
+        cookieHelpers.setCookie();
+        return true;
+      }
+      return false;
+    }
   }
 }
 </script>

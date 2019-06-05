@@ -7,7 +7,9 @@ Place the video files in `/public/config/videos`.
 Place the additional resources in `/public/config/additional-resources`
 
 View the files `/src/videoIndex.js` & `src/resourcesIndex.js` to see what the
-names of the videos and resources need to be in those folders. 
+names of the videos and resources need to be in those folders.
+
+View `/src/settings.js` for some high level configuration options. 
 
 ### Project setup
 clone the repo, navigate to the proper directory and run
