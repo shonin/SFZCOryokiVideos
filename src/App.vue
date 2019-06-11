@@ -8,7 +8,6 @@
         @changePage="changePage"
         :currentPage="currentPage"
       />
-      <iframe src="https://cdn.jwplayer.com/players/vZv5VbvZ-jwrvqMME.html"></iframe>
       <div class="container">
         <PlayAll v-if="currentPage==='playAll'"/>
         <TOC v-if="currentPage==='toc'"/>

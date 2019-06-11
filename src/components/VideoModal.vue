@@ -32,11 +32,17 @@
 </template>
 
 <script>
+import settings from '../settings.js'
+
 export default {
   name: 'VideoModal',
   methods: {
     getSrc(i) {
-      return this.publicPath + "config/videos/" + this.toc[i].src;
+      if (this.buildForFlashDrive) {
+        return this.publicPath + "config/videos/" + this.toc[i].src;
+      } else {
+        return this.toc[i].jwSrc ;
+      }
     },
     next(i) {
       if(this.should_autoplay(i)) {
@@ -59,7 +65,8 @@ export default {
   data() {
     return {
       publicPath: process.env.BASE_URL,
-      autoplay_checkbox: true
+      autoplay_checkbox: true,
+      buildForFlashDrive: settings.buildForFlashDrive
     }
   }
 };
