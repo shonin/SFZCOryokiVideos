@@ -35,7 +35,7 @@ export default {
   name: 'ResourceModal',
   methods: {
     getSrc(i) {
-      return this.publicPath + "config/additional-resources/" + this.resources[i].src;
+      return this.publicPath + "oryoki_config/additional-resources/" + this.resources[i].src;
     },
     next() {
       if(this.autoplay) {

@@ -39,7 +39,7 @@ export default {
   methods: {
     getSrc(i) {
       if (this.buildForFlashDrive) {
-        return this.publicPath + "config/videos/" + this.toc[i].src;
+        return this.publicPath + "oryoki_config/videos/" + this.toc[i].src;
       } else {
         return this.toc[i].jwSrc ;
       }

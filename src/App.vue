@@ -48,7 +48,7 @@ export default {
       this.currentPage = pageName;
     },
     getImgSrc(img) {
-      return this.publicPath + "config/img/" + img;
+      return this.publicPath + "oryoki_config/img/" + img;
     },
     showApp() {
       if(!settings.passwordProtectSite) { return true; }

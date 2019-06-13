@@ -3,8 +3,8 @@ node_modules
 /dist
 
 # videos are too large to use source control
-/public/config/videos
-/public/config/additional-resources
+/public/oryoki_config/videos
+/public/oryoki_config/additional-resources
 /videos2
 
 # local env files

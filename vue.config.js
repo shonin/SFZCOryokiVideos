@@ -7,5 +7,5 @@ module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
     ? './'
     : '/',
-  assetsDir: 'config/assets'
+  assetsDir: 'oryoki_config/assets'
 }
